@@ -33,11 +33,30 @@ const userLoginError = {
     message: '登录错误',
     result: ''
 }
+const tokenError = {
+    code: '10101',
+    message: '用户token不合法',
+    result: ''
+}
+const tokenExpireError = {
+    code: '10102',
+    message: '用户token已过期',
+    result: ''
+}
+const adminPermissonError = {
+    code: '10103',
+    message: '用户不是管理员',
+    result: ''
+}
+
 module.exports = {
     NotNullError,
     ExistedError,
     RegisterError,
     userNotExsite,
     userLoginError,
-    passWordError
+    passWordError,
+    tokenError,
+    tokenExpireError,
+    adminPermissonError
 };

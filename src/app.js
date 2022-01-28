@@ -1,10 +1,23 @@
+const path = require('path');
+
 const Koa = require('koa')
 const koaBody = require('koa-body');
+const KoaStaic = require('koa-static');
 
 const router = require('./router/index');
 
 const app = new Koa();
-app.use(koaBody());
+/*static目录下的静态资源可以被前端访问 */
+app.use(KoaStaic(path.join(__dirname, './static')));
+/** 配置文件上传 */
+app.use(koaBody({
+    multipart: true,
+    formidable: {
+        uploadDir: path.join(__dirname, './static'),
+        /*保留文件扩展名 */
+        keepExtensions: true
+    }
+}));
 app.use(router.routes());
 
 // 全局错误处理

@@ -14,6 +14,11 @@ const User = sequelize.define('koa_user', {
     password: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    is_admin: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+        comment: ''
     }
 });
 
