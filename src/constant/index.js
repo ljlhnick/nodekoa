@@ -48,7 +48,11 @@ const adminPermissonError = {
     message: '用户不是管理员',
     result: ''
 }
-
+const fileTypeError = {
+    code: '10104',
+    message: '上传文件类型不支持',
+    result: ''
+}
 module.exports = {
     NotNullError,
     ExistedError,
@@ -58,5 +62,6 @@ module.exports = {
     passWordError,
     tokenError,
     tokenExpireError,
-    adminPermissonError
+    adminPermissonError,
+    fileTypeError
 };
